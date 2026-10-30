@@ -1,0 +1,63 @@
+/* iPhone layout, including Home indicator and landscape camera cutouts. */
+html{scroll-padding-top:160px;-webkit-text-size-adjust:100%}
+body{min-width:0;overflow-wrap:anywhere}
+header{padding-top:calc(16px + env(safe-area-inset-top));padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+.wrap{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right));padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+button,select,input:not([type=checkbox]),.original-link,summary{min-height:44px}
+button,.upload,.original-link,summary{touch-action:manipulation}
+input,textarea,select{font-size:16px;min-width:0;max-width:100%}
+input[type=checkbox]{width:24px!important;height:24px;vertical-align:middle}
+.row>*{min-width:0}.row h2{flex:1}.split{grid-template-columns:repeat(2,minmax(0,1fr))}
+.photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.photo button{width:44px;height:44px;min-width:44px!important}
+.photo .original-link{display:flex!important;align-items:center}
+.upload{min-height:100px;display:flex;flex-direction:column;justify-content:center}
+.upload:focus-within{outline:3px solid #141414;outline-offset:2px}
+.supplier strong{overflow-wrap:anywhere}.actions button{min-width:100px}
+.tabs{position:sticky;top:0;z-index:4;padding:8px 0;background:#f5f5f3}
+header{position:relative}.tab{min-height:48px}
+#pwaStatus{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px;line-height:1.5}
+#pwaStatus span{border:1px solid #ffffff40;border-radius:8px;padding:4px 8px}
+#networkStatus[data-offline=true]{color:#f4cf42}
+#installHelp{background:#fff8d8}#installHelp summary{display:flex;align-items:center}
+#installHelp p{line-height:1.6;font-size:14px}
+#toast{bottom:calc(18px + env(safe-area-inset-bottom))}
+dialog{max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px)!important}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #b28b00;outline-offset:2px}
+@media(max-width:380px){.split{grid-template-columns:minmax(0,1fr)}.panel{padding:14px}.tabs{gap:6px}.tab{font-size:14px;padding:10px 6px}}
+@media(prefers-reduced-motion:no-preference){.tab,.primary,.secondary{transition:background-color .15s}}
+
+/* Fast capture: cameras first, optional typing closed, save within thumb reach. */
+.capture-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 10px}
+.capture-heading h2{font-size:18px;margin:0}.capture-heading p{margin:3px 0}
+.camera-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.camera-panel{padding:12px;margin:0}.camera-panel h2{font-size:14px}
+.camera-panel .upload{min-height:80px;padding:10px 6px}.camera-panel .upload strong{font-size:16px}
+.garment-panel{grid-column:1/-1}.garment-panel h2{margin-bottom:8px}
+.garment-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.garment-panel .upload{min-height:64px}.camera-panel .photo-grid:empty{margin:0}
+.camera-panel .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.garment-panel .photo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.quick-notes{margin-top:10px;padding:12px}.quick-notes .field{margin-top:0}
+.quick-notes textarea{min-height:66px}.quick-notes .note{margin:4px 0 9px}
+.decision-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.decision-buttons button{min-height:48px;min-width:0;padding:10px 4px;font-size:15px}
+.decision-buttons [aria-pressed=true]{background:#f4cf42;border:2px solid #141414}
+.fast-capture #decision{position:absolute;clip-path:inset(50%);width:1px;height:1px;min-height:0;overflow:hidden;pointer-events:none}
+#supplierDetails>summary{display:flex;align-items:center;font-size:14px;margin:0;min-height:44px}
+#supplierDetails{padding:6px 12px}#supplierDetails[open]{padding-bottom:14px}
+.save-panel{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:calc(100% - 20px);max-width:712px;z-index:3;margin:0;padding:10px 12px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -3px 18px #00000012}
+.save-panel .actions{margin-top:6px}.save-panel #save{flex:3;min-height:52px}.save-panel #reset{flex:1;min-width:88px;padding:10px 8px}
+.save-panel p{margin:4px 0;font-size:11px}.save-panel .status{font-weight:650}
+.fast-capture #toast{bottom:calc(165px + env(safe-area-inset-bottom))}
+.supplier-thumbnail{float:left;width:80px;height:80px;object-fit:cover;border-radius:10px;margin:0 12px 8px 0;background:#eee}
+.supplier::after{content:'';display:block;clear:both}.capture-time{display:block;margin-top:8px}
+.photo a.original-link{font-size:10px;min-height:44px}
+.fast-capture .wrap{padding-top:10px;padding-bottom:calc(185px + env(safe-area-inset-bottom))}
+.fast-capture header{padding-top:calc(12px + env(safe-area-inset-top));padding-bottom:12px}
+.fast-capture header h1{font-size:20px}.fast-capture #pwaStatus{margin-top:6px;font-size:11px}
+.fast-capture .tabs{padding:4px 0;margin-bottom:10px}
+.fast-capture #installHelp{padding:2px 12px;margin-top:10px}.fast-capture #installHelp summary{margin:0;font-size:14px}
+.fast-capture input,.fast-capture textarea,.fast-capture summary{scroll-margin-bottom:190px}
+html{scroll-padding-bottom:190px}
+@media(max-width:380px){.camera-steps{gap:7px}.camera-panel{padding:9px}.camera-panel .upload strong{font-size:14px}.capture-heading h2{font-size:16px}.decision-buttons button{font-size:14px}}
